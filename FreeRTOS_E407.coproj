@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.6" name="FreeRTOS_E407">
+  <Target name="FreeRTOS_E407" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="345" chipName="STM32F407ZG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="FPU" value="1"/>
+        <Includepaths>
+          <Includepath path="."/>
+          <Includepath path="libraries/cmsis/device/st/stm32f4xx/include"/>
+          <Includepath path="libraries/stm32f4xx_stdperiph_driver/inc"/>
+          <Includepath path="freertos/include"/>
+          <Includepath path="lwip-1.4.1/src/include"/>
+          <Includepath path="lwip-1.4.1/src/include/lwip"/>
+          <Includepath path="lwip-1.4.1/src/include/netif"/>
+          <Includepath path="lwip-1.4.1/src/include/ipv4"/>
+          <Includepath path="lwip-1.4.1/port/stm32f4x7/freertos"/>
+          <Includepath path="lwip-1.4.1/port/stm32f4x7"/>
+          <Includepath path="web"/>
+          <Includepath path="debugging"/>
+          <Includepath path="fatfs"/>
+          <Includepath path="rgb_strip"/>
+          <Includepath path="accelerometer"/>
+          <Includepath path="lcd/inc"/>
+          <Includepath path="barcodescanner"/>
+          <Includepath path="ballcontrol"/>
+          <Includepath path="lcd/img"/>
+          <Includepath path="usergui"/>
+          <Includepath path="usergui/pages"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F407ZG"/>
+          <Define name="STM32F4XX"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="__ASSEMBLY__"/>
+          <Define name="__FPU_USED"/>
+          <Define name="HSE_VALUE=12000000"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value=""/>
+        <LinkedLibraries>
+          <Libset dir="" libs="m"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./stm32f407zg_flash.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="FreeRTOS_E407"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ColinkEx"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="30" name="C Library" path="" type="2"/>
+    <Component id="31" name="Retarget printf" path="" type="2"/>
+    <Component id="54" name="M4 CMSIS Core" path="" type="2"/>
+    <Component id="500" name="CMSIS BOOT" path="" type="2"/>
+    <Component id="501" name="RCC" path="" type="2"/>
+    <Component id="504" name="GPIO" path="" type="2"/>
+    <Component id="505" name="EXTI" path="" type="2"/>
+    <Component id="508" name="WWDG" path="" type="2"/>
+    <Component id="509" name="SPI" path="" type="2"/>
+    <Component id="510" name="I2C" path="" type="2"/>
+    <Component id="511" name="DMA" path="" type="2"/>
+    <Component id="513" name="TIM" path="" type="2"/>
+    <Component id="516" name="FSMC" path="" type="2"/>
+    <Component id="517" name="USART" path="" type="2"/>
+    <Component id="520" name="SDIO" path="" type="2"/>
+    <Component id="524" name="MISC" path="" type="2"/>
+    <Component id="526" name="SYSCFG" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="lwip/ppp/pap.h" path="lwip-1.4.1/src/netif/ppp/pap.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
+    <File name="lwip/ipv4/inet.c" path="lwip-1.4.1/src/core/ipv4/inet.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
+    <File name="LCD/SSD1963_font.c" path="LCD/src/SSD1963_font.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4x7_eth.c" path="STM32F4x7_ETH_Driver/src/stm32f4x7_eth.c" type="1"/>
+    <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
+    <File name="FatFS/option" path="" type="2"/>
+    <File name="UserGUI/UserGUI.c" path="UserGUI/UserGUI.c" type="1"/>
+    <File name="LCD/img/tkj_logo.c" path="LCD/img/tkj_logo.c" type="1"/>
+    <File name="FreeRTOS/heap_4.c" path="FreeRTOS/heap_4.c" type="1"/>
+    <File name="LCD/img" path="" type="2"/>
+    <File name="LCD/SSD1963.c" path="LCD/src/SSD1963.c" type="1"/>
+    <File name="UserGUI/Pages/Admin.h" path="UserGUI/Pages/Admin.h" type="1"/>
+    <File name="lwip/ppp/ppp.c" path="lwip-1.4.1/src/netif/ppp/ppp.c" type="1"/>
+    <File name="stdio/printf.c" path="stdio/printf.c" type="1"/>
+    <File name="lwip/port" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
+    <File name="lwip/ipv4/ip_frag.c" path="lwip-1.4.1/src/core/ipv4/ip_frag.c" type="1"/>
+    <File name="lwip/api/tcpip.c" path="lwip-1.4.1/src/api/tcpip.c" type="1"/>
+    <File name="LCD/img/theblast.c" path="LCD/img/theblast.c" type="1"/>
+    <File name="stdio" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
+    <File name="BallControl" path="" type="2"/>
+    <File name="UserGUI/Pages/Admin.c" path="UserGUI/Pages/Admin.c" type="1"/>
+    <File name="FatFS" path="" type="2"/>
+    <File name="lwip/ppp/md5.c" path="lwip-1.4.1/src/netif/ppp/md5.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
+    <File name="stm32f4x7_eth_bsp.c" path="stm32f4x7_eth_bsp.c" type="1"/>
+    <File name="lwip/ppp/ppp.h" path="lwip-1.4.1/src/netif/ppp/ppp.h" type="1"/>
+    <File name="lwip/ppp/lcp.h" path="lwip-1.4.1/src/netif/ppp/lcp.h" type="1"/>
+    <File name="lwip/ppp/pap.c" path="lwip-1.4.1/src/netif/ppp/pap.c" type="1"/>
+    <File name="cmsis_lib" path="" type="2"/>
+    <File name="http_client.h" path="http_client.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4x7_eth.h" path="STM32F4x7_ETH_Driver/inc/stm32f4x7_eth.h" type="1"/>
+    <File name="lwip/udp.c" path="lwip-1.4.1/src/core/udp.c" type="1"/>
+    <File name="FatFS/ffconf.h" path="FatFS/ffconf.h" type="1"/>
+    <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="lwip/ppp/md5.h" path="lwip-1.4.1/src/netif/ppp/md5.h" type="1"/>
+    <File name="lwip/api/netdb.c" path="lwip-1.4.1/src/api/netdb.c" type="1"/>
+    <File name="lwip/raw.c" path="lwip-1.4.1/src/core/raw.c" type="1"/>
+    <File name="LCD/inc/SSD1963_GUI.h" path="LCD/inc/SSD1963_GUI.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="UserGUI/Pages/NonBlastMain.h" path="UserGUI/Pages/NonBlastMain.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
+    <File name="http_client.c" path="http_client.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
+    <File name="FatFS/diskio.h" path="FatFS/diskio.h" type="1"/>
+    <File name="RGB_Strip/RGB_Strip.c" path="RGB_Strip/RGB_Strip.c" type="1"/>
+    <File name="FreeRTOS/event_groups.c" path="FreeRTOS/event_groups.c" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="lwip/ppp/auth.h" path="lwip-1.4.1/src/netif/ppp/auth.h" type="1"/>
+    <File name="UserGUI/Pages/Player_Register.h" path="UserGUI/Pages/Player_Register.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_fsmc.c" path="cmsis_lib/source/stm32f4xx_fsmc.c" type="1"/>
+    <File name="lwip/ipv4/icmp.c" path="lwip-1.4.1/src/core/ipv4/icmp.c" type="1"/>
+    <File name="lwip/dns.c" path="lwip-1.4.1/src/core/dns.c" type="1"/>
+    <File name="LCD/inc/SSD1963_font.h" path="LCD/inc/SSD1963_font.h" type="1"/>
+    <File name="lwipopts.h" path="lwipopts.h" type="1"/>
+    <File name="FreeRTOS/ftimers.c" path="FreeRTOS/ftimers.c" type="1"/>
+    <File name="lwip/ppp" path="" type="2"/>
+    <File name="lwip/stats.c" path="lwip-1.4.1/src/core/stats.c" type="1"/>
+    <File name="UserGUI/Pages/RebootMatch.h" path="UserGUI/Pages/RebootMatch.h" type="1"/>
+    <File name="lwip/ppp/randm.c" path="lwip-1.4.1/src/netif/ppp/randm.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
+    <File name="lwip" path="" type="2"/>
+    <File name="UserGUI/Pages" path="" type="2"/>
+    <File name="lwip/ppp/lcp.c" path="lwip-1.4.1/src/netif/ppp/lcp.c" type="1"/>
+    <File name="UserGUI/Pages/NonBlastMain.c" path="UserGUI/Pages/NonBlastMain.c" type="1"/>
+    <File name="RGB_Strip/RGB_Strip.h" path="RGB_Strip/RGB_Strip.h" type="1"/>
+    <File name="LCD/inc/SSD1963_CMD.h" path="LCD/inc/SSD1963_CMD.h" type="1"/>
+    <File name="lwip/ipv4/ip_addr.c" path="lwip-1.4.1/src/core/ipv4/ip_addr.c" type="1"/>
+    <File name="lwip/api" path="" type="2"/>
+    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
+    <File name="lwip/port/sys_arch.c" path="lwip-1.4.1/port/STM32F4x7/FreeRTOS/sys_arch.c" type="1"/>
+    <File name="LCD/inc/SSD1963_api.h" path="LCD/inc/SSD1963_api.h" type="1"/>
+    <File name="lwip/netif" path="" type="2"/>
+    <File name="lwip/tcp_out.c" path="lwip-1.4.1/src/core/tcp_out.c" type="1"/>
+    <File name="lwip/dhcp.c" path="lwip-1.4.1/src/core/dhcp.c" type="1"/>
+    <File name="lwip/ipv4" path="" type="2"/>
+    <File name="lwip/port/ethernetif.c" path="lwip-1.4.1/port/STM32F4x7/FreeRTOS/ethernetif.c" type="1"/>
+    <File name="lwip/init.c" path="lwip-1.4.1/src/core/init.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
+    <File name="lwip/ipv4/ip.c" path="lwip-1.4.1/src/core/ipv4/ip.c" type="1"/>
+    <File name="UserGUI/Pages/Player_Register.c" path="UserGUI/Pages/Player_Register.c" type="1"/>
+    <File name="UserGUI/Pages/Fun_Select.c" path="UserGUI/Pages/Fun_Select.c" type="1"/>
+    <File name="FatFS/ff.h" path="FatFS/ff.h" type="1"/>
+    <File name="LCD/inc/SSD1963.h" path="LCD/inc/SSD1963.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
+    <File name="UserGUI/Pages/Score.h" path="UserGUI/Pages/Score.h" type="1"/>
+    <File name="lwip/ppp/vj.c" path="lwip-1.4.1/src/netif/ppp/vj.c" type="1"/>
+    <File name="FatFS/diskio.c" path="FatFS/diskio.c" type="1"/>
+    <File name="lwip/netif/etharp.c" path="lwip-1.4.1/src/netif/etharp.c" type="1"/>
+    <File name="Os_Wrap.h" path="Os_Wrap.h" type="1"/>
+    <File name="LCD/SSD1963_GUI.c" path="LCD/src/SSD1963_GUI.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
+    <File name="FreeRTOS/croutine.c" path="FreeRTOS/croutine.c" type="1"/>
+    <File name="lwip/ppp/vj.h" path="lwip-1.4.1/src/netif/ppp/vj.h" type="1"/>
+    <File name="UserGUI/Pages/RebootMatch.c" path="UserGUI/Pages/RebootMatch.c" type="1"/>
+    <File name="UserGUI" path="" type="2"/>
+    <File name="FatFS/ff.c" path="FatFS/ff.c" type="1"/>
+    <File name="UserGUI/Pages/Fun_Select.h" path="UserGUI/Pages/Fun_Select.h" type="1"/>
+    <File name="UserGUI/Pages/Score.c" path="UserGUI/Pages/Score.c" type="1"/>
+    <File name="lwip/def.c" path="lwip-1.4.1/src/core/def.c" type="1"/>
+    <File name="BarcodeScanner/BarcodeScanner.c" path="BarcodeScanner/BarcodeScanner.c" type="1"/>
+    <File name="LCD/inc" path="" type="2"/>
+    <File name="FatFS/sdio_sd.c" path="FatFS/sdio_sd.c" type="1"/>
+    <File name="lwip/ppp/chpms.c" path="lwip-1.4.1/src/netif/ppp/chpms.c" type="1"/>
+    <File name="lwip/ppp/pppdebug.h" path="lwip-1.4.1/src/netif/ppp/pppdebug.h" type="1"/>
+    <File name="FatFS/option/syscall.c" path="FatFS/option/syscall.c" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
+    <File name="lwip/ppp/ipcp.h" path="lwip-1.4.1/src/netif/ppp/ipcp.h" type="1"/>
+    <File name="Debugging/Debugging.h" path="Debugging/Debugging.h" type="1"/>
+    <File name="LCD/inc/SSD1963_gradient.h" path="LCD/inc/SSD1963_gradient.h" type="1"/>
+    <File name="LCD" path="" type="2"/>
+    <File name="stm32f4xx_it.c" path="stm32f4xx_it.c" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="lwip/ppp/ppp_impl.h" path="lwip-1.4.1/src/netif/ppp/ppp_impl.h" type="1"/>
+    <File name="FreeRTOS/list.c" path="FreeRTOS/list.c" type="1"/>
+    <File name="Debugging" path="" type="2"/>
+    <File name="BarcodeScanner/BarcodeScanner.h" path="BarcodeScanner/BarcodeScanner.h" type="1"/>
+    <File name="lwip/netif.c" path="lwip-1.4.1/src/core/netif.c" type="1"/>
+    <File name="lwip/api/api_lib.c" path="lwip-1.4.1/src/api/api_lib.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_wwdg.c" path="cmsis_lib/source/stm32f4xx_wwdg.c" type="1"/>
+    <File name="netconf.c" path="netconf.c" type="1"/>
+    <File name="Debugging/Debugging.c" path="Debugging/Debugging.c" type="1"/>
+    <File name="lwip/memp.c" path="lwip-1.4.1/src/core/memp.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="LCD/inc/SSD1963_touch.h" path="LCD/inc/SSD1963_touch.h" type="1"/>
+    <File name="FreeRTOS/queue.c" path="FreeRTOS/queue.c" type="1"/>
+    <File name="lwip/ppp/ipcp.c" path="lwip-1.4.1/src/netif/ppp/ipcp.c" type="1"/>
+    <File name="lwip/tcp.c" path="lwip-1.4.1/src/core/tcp.c" type="1"/>
+    <File name="BallControl/BallControl.h" path="BallControl/BallControl.h" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="httpserver-socket.c" path="httpserver-socket.c" type="1"/>
+    <File name="FatFS/option/ccsbcs.c" path="FatFS/option/ccsbcs.c" type="1"/>
+    <File name="lwip/sys.c" path="lwip-1.4.1/src/core/sys.c" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="lwip/api/api_msg.c" path="lwip-1.4.1/src/api/api_msg.c" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="startup_stm32f4xx.s" path="startup_stm32f4xx.s" type="1"/>
+    <File name="LCD/SSD1963_gradient.c" path="LCD/src/SSD1963_gradient.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_wwdg.h" path="cmsis_lib/include/stm32f4xx_wwdg.h" type="1"/>
+    <File name="Accelerometer" path="" type="2"/>
+    <File name="lwip/api/netifapi.c" path="lwip-1.4.1/src/api/netifapi.c" type="1"/>
+    <File name="LCD/SSD1963_api.c" path="LCD/src/SSD1963_api.c" type="1"/>
+    <File name="lwip/ppp/randm.h" path="lwip-1.4.1/src/netif/ppp/randm.h" type="1"/>
+    <File name="BallControl/BallControl.c" path="BallControl/BallControl.c" type="1"/>
+    <File name="lwip/tcp_in.c" path="lwip-1.4.1/src/core/tcp_in.c" type="1"/>
+    <File name="FreeRTOS/port.c" path="FreeRTOS/port.c" type="1"/>
+    <File name="lwip/ppp/chpms.h" path="lwip-1.4.1/src/netif/ppp/chpms.h" type="1"/>
+    <File name="FatFS/sdio_sd.h" path="FatFS/sdio_sd.h" type="1"/>
+    <File name="lwip/ppp/auth.c" path="lwip-1.4.1/src/netif/ppp/auth.c" type="1"/>
+    <File name="lwip/ppp/fsm.h" path="lwip-1.4.1/src/netif/ppp/fsm.h" type="1"/>
+    <File name="FatFS/integer.h" path="FatFS/integer.h" type="1"/>
+    <File name="lwip/pbuf.c" path="lwip-1.4.1/src/core/pbuf.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
+    <File name="Accelerometer/Accelerometer.c" path="Accelerometer/Accelerometer.c" type="1"/>
+    <File name="lwip/ppp/chap.c" path="lwip-1.4.1/src/netif/ppp/chap.c" type="1"/>
+    <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
+    <File name="LCD/SSD1963_touch.c" path="LCD/src/SSD1963_touch.c" type="1"/>
+    <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_i2c.c" path="cmsis_lib/source/stm32f4xx_i2c.c" type="1"/>
+    <File name="lwip/api/netbuf.c" path="lwip-1.4.1/src/api/netbuf.c" type="1"/>
+    <File name="Accelerometer/Accelerometer.h" path="Accelerometer/Accelerometer.h" type="1"/>
+    <File name="cmsis_lib/source" path="" type="2"/>
+    <File name="lwip/ipv4/inet_chksum.c" path="lwip-1.4.1/src/core/ipv4/inet_chksum.c" type="1"/>
+    <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
+    <File name="lwip/ipv4/autoip.c" path="lwip-1.4.1/src/core/ipv4/autoip.c" type="1"/>
+    <File name="lwip/ipv4/igmp.c" path="lwip-1.4.1/src/core/ipv4/igmp.c" type="1"/>
+    <File name="lwip/ppp/chap.h" path="lwip-1.4.1/src/netif/ppp/chap.h" type="1"/>
+    <File name="lwip/mem.c" path="lwip-1.4.1/src/core/mem.c" type="1"/>
+    <File name="fs.c" path="fs.c" type="1"/>
+    <File name="UserGUI/UserGUI.h" path="UserGUI/UserGUI.h" type="1"/>
+    <File name="FreeRTOS/tasks.c" path="FreeRTOS/tasks.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
+    <File name="lwip/ppp/magic.c" path="lwip-1.4.1/src/netif/ppp/magic.c" type="1"/>
+    <File name="UserGUI/Pages/GUIMain.c" path="UserGUI/Pages/GUIMain.c" type="1"/>
+    <File name="RGB_Strip" path="" type="2"/>
+    <File name="lwip/api/sockets.c" path="lwip-1.4.1/src/api/sockets.c" type="1"/>
+    <File name="stm32f4x7_eth_conf.h" path="stm32f4x7_eth_conf.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="LCD/img/lock.c" path="LCD/img/lock.c" type="1"/>
+    <File name="BarcodeScanner" path="" type="2"/>
+    <File name="netconf.h" path="netconf.h" type="1"/>
+    <File name="UserGUI/Pages/GUIMain.h" path="UserGUI/Pages/GUIMain.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="lwip/ppp/ppp_oe.c" path="lwip-1.4.1/src/netif/ppp/ppp_oe.c" type="1"/>
+    <File name="lwip/ppp/fsm.c" path="lwip-1.4.1/src/netif/ppp/fsm.c" type="1"/>
+    <File name="lwip/timers.c" path="lwip-1.4.1/src/core/timers.c" type="1"/>
+    <File name="lwip/api/err.c" path="lwip-1.4.1/src/api/err.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_fsmc.h" path="cmsis_lib/include/stm32f4xx_fsmc.h" type="1"/>
+    <File name="lwip/netif/slipif.c" path="lwip-1.4.1/src/netif/slipif.c" type="1"/>
+    <File name="lwip/ppp/magic.h" path="lwip-1.4.1/src/netif/ppp/magic.h" type="1"/>
+    <File name="cmsis_lib/include" path="" type="2"/>
+    <File name="FreeRTOS" path="" type="2"/>
+    <File name="FreeRTOSConfig.h" path="FreeRTOSConfig.h" type="1"/>
+  </Files>
+</Project>
